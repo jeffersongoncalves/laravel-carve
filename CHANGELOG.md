@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-carve` will be documented in this file.
 
+## v1.1.0 - 2026-09-25
+
+### Added\n\n- Laravel Boost support: `resources/boost/guidelines/core.blade.php` and the `laravel-carve-development` skill. Apps using Laravel Boost pick them up on `php artisan boost:install` / `boost:update`.
+
 ## v1.0.0 - 2026-09-25
 
 Initial release.
