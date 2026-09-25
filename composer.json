@@ -1,0 +1,78 @@
+{
+    "name": "jeffersongoncalves/laravel-carve",
+    "description": "Carve markup for Laravel: named render profiles, Blade directives and component, .crv views, Eloquent cast, Str macros, validation rule, linting, Markdown/HTML import and Artisan commands, built on markup-carve/carve-php.",
+    "keywords": [
+        "jeffersongoncalves",
+        "laravel",
+        "laravel-carve",
+        "carve",
+        "markup",
+        "blade"
+    ],
+    "homepage": "https://github.com/jeffersongoncalves/laravel-carve",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Gonçalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/console": "^11.0|^12.0|^13.0",
+        "illuminate/contracts": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "illuminate/view": "^11.0|^12.0|^13.0",
+        "markup-carve/carve-php": "^0.1.9",
+        "spatie/laravel-package-tools": "^1.16",
+        "symfony/finder": "^7.0|^8.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.7.4|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0",
+        "symfony/yaml": "^7.0|^8.0"
+    },
+    "suggest": {
+        "symfony/yaml": "Parses YAML frontmatter into RenderedCarve::meta()."
+    },
+    "autoload": {
+        "psr-4": {
+            "JeffersonGoncalves\\Carve\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JeffersonGoncalves\\Carve\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JeffersonGoncalves\\Carve\\CarveServiceProvider"
+            ],
+            "aliases": {
+                "Carve": "JeffersonGoncalves\\Carve\\Facades\\Carve"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
