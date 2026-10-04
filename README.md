@@ -6,6 +6,16 @@
 
 # Laravel Carve
 
+> [!WARNING]
+> **This package is abandoned.** Use the official bridge [`markup-carve/laravel-carve`](https://github.com/markup-carve/laravel-carve) instead — it includes the authoring APIs from this package (render profiles, Blade component, `.crv` views, Eloquent cast, `Str` macros, validation rule, linting, import and Artisan commands). See [#3](https://github.com/jeffersongoncalves/laravel-carve/issues/3).
+>
+> ```bash
+> composer remove jeffersongoncalves/laravel-carve
+> composer require markup-carve/laravel-carve
+> ```
+>
+> Then update imports from `JeffersonGoncalves\Carve\` to `MarkupCarve\LaravelCarve\` (e.g. `Facades\Carve`, `Rules\ValidCarve`) and republish the config.
+
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jeffersongoncalves)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/laravel-carve.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/laravel-carve)

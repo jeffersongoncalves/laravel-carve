@@ -11,6 +11,7 @@
     ],
     "homepage": "https://github.com/jeffersongoncalves/laravel-carve",
     "license": "MIT",
+    "abandoned": "markup-carve/laravel-carve",
     "authors": [
         {
             "name": "Jefferson Gonçalves",
