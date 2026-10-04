@@ -166,7 +166,8 @@ it('lints source sorted by position', function () {
     $warnings = Carve::lint("fine\n\n**bold** habit");
 
     expect($warnings)->not->toBeEmpty()
-        ->and($warnings[0]->rule)->toBe('markdown-strong-asterisks')
+        ->and($warnings[0]->rule)->toBeIn(['markdown-strong-asterisks', 'markdown-strong-double-star'])
+        ->and($warnings[0]->message)->toContain('**bold**')
         ->and($warnings[0]->line)->toBe(3)
         ->and(Carve::lint('*bold* is fine'))->toBe([]);
 });

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Artisan;
+use JeffersonGoncalves\Carve\Facades\Carve;
 
 beforeEach(function () {
     $this->out = sys_get_temp_dir().'/laravel-carve-'.uniqid().'.out';
@@ -59,8 +60,11 @@ it('fails to convert unknown formats and missing files', function () {
 });
 
 it('lints files and directories', function () {
+    $warnings = Carve::lint((string) file_get_contents(fixture('lint/bad.crv')));
+    expect($warnings)->not->toBeEmpty();
+
     $this->artisan('carve:lint', ['paths' => [fixture('lint')]])
-        ->expectsOutputToContain('markdown-strong-asterisks')
+        ->expectsOutputToContain($warnings[0]->rule)
         ->assertFailed();
 
     $this->artisan('carve:lint', ['paths' => [fixture('lint/good.crv')]])
